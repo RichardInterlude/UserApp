@@ -3,6 +3,7 @@
         "corsheaders",
         "Userapp",
         "userapps",
-        "Userconfig"
+        "Userconfig",
+        "venv"
     ]
 }
