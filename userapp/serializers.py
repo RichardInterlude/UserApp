@@ -2,6 +2,9 @@ from rest_framework import serializers
 
 from . models import Profile
 from django.contrib.auth.models import User
+from . utils import sendMail
+
+from typing import Dict, Any
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -30,7 +33,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError('password does not match')
         return data
     
-    def create(self, validated_data):
+    def create(self, validated_data: Dict[str, Any]):
         username = validated_data.pop('username')
         email = validated_data.pop('email')
         password = validated_data.pop('password')
@@ -44,7 +47,11 @@ class RegistrationSerializer(serializers.ModelSerializer):
             gender= validated_data['gender'],
             profile_pix = validated_data.get('profile_pix'),
         )
+        sendMail()
         return profile
+
+
+
 
 
 
