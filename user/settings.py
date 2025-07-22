@@ -14,9 +14,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://userapp-s69q.onrender.com','http://userapp-s69q.onrender.com','userapp-s69q.onrender.com','userapp-s69q.onrender.com']
 
 
 # Application definition
